@@ -32,10 +32,13 @@ jobs:
       - name: 🔍 Debug Environment Variables
         run: printenv | grep LOKALISE
 
+      - name: 🔍 Debug LOKALISE_API_KEY
+        run: echo ${{ secrets.LOKALISE_API_KEY }}
+
       - name: 📤 Upload des clés vers Lokalise
         run: node scripts/upload-to-lokalise.js
         env:
-          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY }}
+          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY || 'default_value' }}
           LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
 
       - name: 📥 Télécharger les traductions mises à jour
@@ -47,4 +50,4 @@ jobs:
       - name: 🏗️ Génération du build Angular
         run: npm run build
 
-        
+
