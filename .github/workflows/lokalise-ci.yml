@@ -29,7 +29,7 @@ jobs:
       
 
       - name: 📝 Extraction des clés de traduction
-        run: ng extract-i18n 
+        run: npx ng extract-i18n 
 
       - name: Debug - List files in src/locale
         run: ls -la src/locale
