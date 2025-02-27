@@ -29,11 +29,6 @@ jobs:
       - name: 📝 Extraction des clés de traduction
         run: npx ng extract-i18n --output-path=src/locale
 
-      - name: 🔍 Debug Environment Variables
-        run: printenv | grep LOKALISE
-
-      - name: 🔍 Debug LOKALISE_API_KEY
-        run: echo ${{ secrets.LOKALISE_API_KEY }}
 
       - name: 📤 Upload des clés vers Lokalise
         run: node scripts/upload-to-lokalise.js
