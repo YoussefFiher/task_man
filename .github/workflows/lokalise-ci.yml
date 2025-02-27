@@ -56,3 +56,12 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📤 Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            commit-message: 'Update translation files'
+            branch: update-translations
+            title: 'Update translation files'
+            body: 'This pull request updates the translation files.'
