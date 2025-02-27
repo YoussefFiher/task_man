@@ -1,0 +1,70 @@
+<div class="task-container">
+    <!-- En-tête -->
+    <header class="task-header">
+        <h1>
+            <i class="fas fa-tasks"></i>
+            <span i18n="@@taskManagerTitle">Gestionnaire de Tâches</span>
+        </h1>
+        <p class="header-subtitle" i18n="@@taskManagerSubtitle">Organisez et suivez vos tâches efficacement</p>
+    </header>
+
+    <!-- Statistiques -->
+    <div class="task-stats">
+        <div class="stat-item">
+            <span class="stat-value">{{tasks.length}}</span>
+            <span class="stat-label" i18n="@@totalTasks">Total</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">{{getCompletedTasks()}}</span>
+            <span class="stat-label" i18n="@@completedTasks">Terminées</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">{{getPendingTasks()}}</span>
+            <span class="stat-label" i18n="@@pendingTasks">En cours</span>
+        </div>
+    </div>
+
+    <!-- Formulaire d'ajout -->
+    <div class="task-form-container">
+        <app-task-form #taskForm (taskAdded)="addTask($event)"></app-task-form>
+    </div>
+
+    <!-- Liste des tâches -->
+    <div class="task-list">
+        <div class="task-list-header">
+            <h2 i18n="@@myTasks">Mes Tâches</h2>
+            <div class="task-filters">
+                <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterTasks('all')" i18n="@@allTasks">
+                    Toutes
+                </button>
+                <button class="filter-btn" [class.active]="currentFilter === 'active'" (click)="filterTasks('active')" i18n="@@activeTasks">
+                    En cours
+                </button>
+                <button class="filter-btn" [class.active]="currentFilter === 'completed'" (click)="filterTasks('completed')" i18n="@@completedTasksFilter">
+                    Terminées
+                </button>
+            </div>
+        </div>
+
+        <div class="task-list-content" *ngIf="filteredTasks.length > 0">
+            <div class="task-items">
+                <div *ngFor="let task of filteredTasks; let i = index" class="task-item-wrapper fade-in">
+                    <app-task-item
+                        [task]="task"
+                        (deleteTask)="deleteTask(i)"
+                        (toggleCompletion)="toggleCompletion(i)">
+                    </app-task-item>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message si aucune tâche -->
+        <div *ngIf="filteredTasks.length === 0" class="empty-list">
+            <i class="fas fa-clipboard-list"></i>
+            <p i18n="@@noTasks">Aucune tâche à afficher</p>
+            <button class="btn btn-primary" (click)="focusTaskForm()" i18n="@@createNewTask">
+                Créer une nouvelle tâche
+            </button>
+        </div>
+    </div>
+</div>
