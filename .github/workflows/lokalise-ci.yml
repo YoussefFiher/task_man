@@ -29,7 +29,7 @@ jobs:
       
 
       - name: 📝 Extraction des clés de traduction
-        run: npx ng extract-i18n --output-path=src/locale
+        run: ng extract-i18n 
 
       - name: Debug - List files in src/locale
         run: ls -la src/locale
@@ -40,11 +40,11 @@ jobs:
       #     LOKALISE_PROJECT_ID: "6923333367bf756ba44db2.21885708"
       #   run: node upload.js
 
-      - name: 📥 Télécharger les traductions mises à jour
-        env:
-          LOKALISE_API_KEY: "51f063ad1a43c181bc402d1df02333dfb8f26e3e"
-          LOKALISE_PROJECT_ID: "6923333367bf756ba44db2.21885708"
-        run: node download.js
+      # - name: 📥 Télécharger les traductions mises à jour
+      #   env:
+      #     LOKALISE_API_KEY: "51f063ad1a43c181bc402d1df02333dfb8f26e3e"
+      #     LOKALISE_PROJECT_ID: "6923333367bf756ba44db2.21885708"
+      #   run: node download.js
 
-      - name: 🏗️ Génération du build Angular
-        run: npm run build
+      # - name: 🏗️ Génération du build Angular
+      #   run: npm run build
