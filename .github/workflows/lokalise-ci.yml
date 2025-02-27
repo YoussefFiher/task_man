@@ -26,23 +26,28 @@ jobs:
       - name: 🌐 Installation de Lokalise CLI
         run: npm install -g @lokalise/node-api unzipper
 
+      - name: 🔎 Vérification des secrets
+        run: |
+          if [ -z "${{ secrets.LOKALISE_API_KEY }}" ] || [ -z "${{ secrets.LOKALISE_PROJECT_ID }}" ]; then
+            echo "❌ Erreur: Les secrets Lokalise ne sont pas définis !" >&2
+            exit 1
+          fi
+        shell: bash
+
       - name: 📝 Extraction des clés de traduction
         run: npx ng extract-i18n --output-path=src/locale
 
-
       - name: 📤 Upload des clés vers Lokalise
-        run: node scripts/upload-to-lokalise.js
-        env:
-          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY || 'default_value' }}
-          LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
-
-      - name: 📥 Télécharger les traductions mises à jour
-        run: node scripts/download-from-lokalise.js
         env:
           LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY }}
           LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+        run: node scripts/upload-to-lokalise.js
+
+      - name: 📥 Télécharger les traductions mises à jour
+        env:
+          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY }}
+          LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+        run: node scripts/download-from-lokalise.js
 
       - name: 🏗️ Génération du build Angular
         run: npm run build
-
-
