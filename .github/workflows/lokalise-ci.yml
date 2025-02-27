@@ -1,0 +1,47 @@
+name: Lokalise Translation Automation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Permet un déclenchement manuel
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Installation de Node.js et Angular
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 📦 Installation des dépendances
+        run: npm install
+
+      - name: 🌐 Installation de Lokalise CLI
+        run: npm install -g @lokalise/node-api unzipper
+
+      - name: 📝 Extraction des clés de traduction
+        run: npx ng extract-i18n --output-path=src/locale
+
+      - name: 📤 Upload des clés vers Lokalise
+        run: node scripts/upload-to-lokalise.js
+        env:
+          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY }}
+          LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+
+      - name: 📥 Télécharger les traductions mises à jour
+        run: node scripts/download-from-lokalise.js
+        env:
+          LOKALISE_API_KEY: ${{ secrets.LOKALISE_API_KEY }}
+          LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+
+      - name: 🏗️ Génération du build Angular
+        run: npm run build
+
+        
