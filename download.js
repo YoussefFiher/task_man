@@ -4,8 +4,8 @@ import axios from 'axios';
 import unzipper from 'unzipper';
 import path from 'path';
 
-const apiKey = '51f063ad1a43c181bc402d1df02333dfb8f26e3e';
-const projectId = '6923333367bf756ba44db2.21885708';
+const apiKey = process.env.LOKALISE_API_KEY;
+const projectId = process.env.LOKALISE_PROJECT_ID;
 
 const client = new LokaliseApi({ apiKey });
 
