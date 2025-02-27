@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+	<file original="ng2.template" datatype="plaintext" xml:space="preserve" source-language="fr" target-language="en">
+		<header>
+			<tool tool-id="lokalise.com" tool-name="Lokalise"></tool>
+		</header>
+		<body>
+			<trans-unit id="activeTasks" datatype="html">
+				<source> En cours </source>
+				<target>...</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">40,42</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="addTask" datatype="html">
+				<source>Ajouter la tâche</source>
+				<target>add a task</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">41</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="allTasks" datatype="html">
+				<source> Toutes </source>
+				<target>all tasks</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">37,39</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="completedTasks" datatype="html">
+				<source>Terminées</source>
+				<target>ssahbi</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">19</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="completedTasksFilter" datatype="html">
+				<source> Terminées </source>
+				<target>done</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">43,45</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="createNewTask" datatype="html">
+				<source> Créer une nouvelle tâche </source>
+				<target>make new task</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">65,67</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="deleteTask" datatype="html">
+				<source>Supprimer la tâche</source>
+				<target>delete the task</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-item/task-item.component.html</context>
+					<context context-type="linenumber">14</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="descriptionRequired" datatype="html">
+				<source> La description est requise </source>
+				<target>description required</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">34,36</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="home" datatype="html">
+				<source>HOME</source>
+				<target>home</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+					<context context-type="linenumber">10</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="myTasks" datatype="html">
+				<source>Mes Tâches</source>
+				<target>my tasks</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">35</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="noTasks" datatype="html">
+				<source>Aucune tâche à afficher</source>
+				<target>any task to display</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">64</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="pendingTasks" datatype="html">
+				<source>En cours</source>
+				<target>ok</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">23</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskDescriptionLabel" datatype="html">
+				<source>Description</source>
+				<target>Description</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">24</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskDescriptionPlaceholder" datatype="html">
+				<source>Entrez la description de la tâche</source>
+				<target>description</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">31</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskManager" datatype="html">
+				<source>TASK MANAGER</source>
+				<target>task manager</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+					<context context-type="linenumber">3</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskManagerSubtitle" datatype="html">
+				<source>Organisez et suivez vos tâches efficacement</source>
+				<target>wach t7eb</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">8</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskManagerTitle" datatype="html">
+				<source>Gestionnaire de Tâches</source>
+				<target>Task manager</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">6</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskTitleLabel" datatype="html">
+				<source>Titre</source>
+				<target>title\n</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">5</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="taskTitlePlaceholder" datatype="html">
+				<source>Entrez le titre de la tâche</source>
+				<target>give the task title\n</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">12</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="tasks" datatype="html">
+				<source>TASKS</source>
+				<target>tasks</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+					<context context-type="linenumber">13</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="titleMinLength" datatype="html">
+				<source> Le titre doit contenir au moins 3 caractères </source>
+				<target> The title must contain at least 3 characters </target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">18,20</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="titleRequired" datatype="html">
+				<source> Le titre est requis </source>
+				<target> The title is required </target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-form/task-form.component.html</context>
+					<context context-type="linenumber">15,17</context>
+				</context-group>
+			</trans-unit>
+			<trans-unit id="totalTasks" datatype="html">
+				<source>Total</source>
+				<target>wach bik</target>
+				<context-group purpose="location">
+					<context context-type="sourcefile">src/app/task-list/task-list.component.html</context>
+					<context context-type="linenumber">15</context>
+				</context-group>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
