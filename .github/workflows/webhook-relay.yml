@@ -1,0 +1,36 @@
+name: Lokalise Download Trigger
+
+on:
+  repository_dispatch:
+    types: [webhook]  # Changé pour accepter le webhook par défaut de Lokalise
+  workflow_dispatch:  # Pour permettre un déclenchement manuel si nécessaire
+
+jobs:
+  download-translations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installation des dépendances
+        run: npm install
+
+      - name: Télécharger les traductions depuis Lokalise
+        env:
+          LOKALISE_API_KEY: "51f063ad1a43c181bc402d1df02333dfb8f26e3e"
+          LOKALISE_PROJECT_ID: "6923333367bf756ba44db2.21885708"
+        run: node download.js
+
+      - name: Commit et push des changements
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/locale
+          git commit -m "Mise à jour automatique des traductions depuis Lokalise" || echo "Pas de changements à commiter"
+          git push
